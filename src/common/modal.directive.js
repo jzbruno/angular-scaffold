@@ -1,18 +1,16 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.directive('modal', modal);
+    angular
+        .module('app')
+        .directive('modal', modal);
 
-	function modal() {
-		return {
-			restrict: 'E',
-			templateUrl: 'common/modal.html',
-			replace: true,
-			transclude: true
-		};
-	}
-
-
+    function modal() {
+        return {
+            restrict: 'E',
+            templateUrl: 'common/modal.html',
+            replace: true,
+            transclude: true
+        };
+    }
 })();

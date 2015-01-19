@@ -1,33 +1,32 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.controller('UsersController', UsersController);
+    angular
+        .module('app')
+        .controller('UsersController', UsersController);
 
-	UsersController.$inject = [
-		'dataService'
-	];
+    UsersController.$inject = [
+        'dataService'
+    ];
 
-	function UsersController(dataService) {
-		var vm = this;
-		vm.users = [];
-		vm.user = {};
-		vm.selectUser = selectUser;
+    function UsersController(dataService) {
+        var vm = this;
+        vm.users = [];
+        vm.user = {};
+        vm.selectUser = selectUser;
 
-		activate();
+        activate();
 
-		function activate() {
-			dataService
-				.get('users')
-				.then(function (users) {
-					console.log(users);
-					vm.users = users;
-				});
-		}
+        function activate() {
+            dataService
+                .get('users')
+                .then(function (users) {
+                    vm.users = users;
+                });
+        }
 
-		function selectUser(user) {
-			vm.user = user;
-		}
-	}
+        function selectUser(user) {
+            vm.user = user;
+        }
+    }
 })();

@@ -1,22 +1,22 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.config(routes);
+    angular
+        .module('app')
+        .config(routes);
 
-	routes.$inject = [
-		'$routeProvider'
-	];
+    routes.$inject = [
+        '$routeProvider'
+    ];
 
-	function routes($routeProvider) {
-	    $routeProvider
-	        .when('/users', {
-	        	title: 'Users',
-	            templateUrl: 'users/users.html',
-	            controller: 'UsersController',
-	            controllerAs: 'vm'
-	        })
-	        .otherwise({redirectTo: '/users'});
-	}
+    function routes($routeProvider) {
+        $routeProvider
+            .when('/users', {
+                title: 'Users',
+                templateUrl: 'users/users.html',
+                controller: 'UsersController',
+                controllerAs: 'vm'
+            })
+            .otherwise({redirectTo: '/users'});
+    }
 })();
