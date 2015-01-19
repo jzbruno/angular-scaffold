@@ -1,0 +1,26 @@
+<div class="page-header">
+	<h4>Users</h4>
+</div>
+
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="user in vm.users">
+			<td>
+				<a class="btn-link" href
+				   data-toggle="modal" data-target="#user"
+				   data-ng-click="vm.selectUser(user)">{{user.name}}</a>
+			</td>
+			<td>{{user.email}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<modal id="user">
+	<pre>{{vm.user | json}}</pre>
+</modal>
