@@ -1,8 +1,21 @@
 (function () {
     'use strict';
 
+    var modules = [
+        'ngRoute'
+    ];
+
     angular
-        .module('app', [
-            'ngRoute'
-        ]);
+        .module('app', modules)
+        .run(init);
+
+    init.$inject = [
+        '$rootScope'
+    ];
+
+    function init($rootScope) {
+        $rootScope.$on('$routeChangeSuccess', function (event, current) {
+            $rootScope.title = current.$$route.title;
+        });
+    }
 })();
