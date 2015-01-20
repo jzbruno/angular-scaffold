@@ -6,7 +6,8 @@
     <div class="panel-body">
         <input class="form-control"
                type="text" placeholder="Quick search"
-               data-ng-model="vm.keywords">
+               data-ng-model="vm.keywords"
+               data-ng-model-options="{debounce: 500}">
     </div>
 
     <table class="table table-striped table-bordered">
