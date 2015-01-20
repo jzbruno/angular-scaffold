@@ -2,24 +2,41 @@
     <h4>Users</h4>
 </div>
 
-<table class="table table-striped table-bordered">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr data-ng-repeat="user in vm.users">
-        <td>
-            <a class="btn-link" href
-               data-toggle="modal" data-target="#user"
-               data-ng-click="vm.selectUser(user)">{{user.name}}</a>
-        </td>
-        <td>{{user.email}}</td>
-    </tr>
-    </tbody>
-</table>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <input class="form-control"
+               type="text" placeholder="Quick search"
+               data-ng-model="vm.keywords">
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="user in vm.filtered = (vm.users | filter: vm.keywords)">
+            <td>
+                <a class="btn-link" href
+                   data-toggle="modal" data-target="#user"
+                   data-ng-click="vm.selectUser(user)">{{user.name}}</a>
+            </td>
+            <td>{{user.email}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="panel-footer text-center">
+        <span data-ng-if="vm.filtered.length > 0">
+            {{vm.filtered.length}} resource(s) found.
+        </span>
+        <span data-ng-if="vm.filtered.length === 0">
+            No resources found.
+        </span>
+    </div>
+</div>
 
 <modal id="user">
     <pre>{{vm.user | json}}</pre>
