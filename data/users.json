@@ -2,19 +2,23 @@
   "users": [
     {
       "name": "Jack",
-      "email": "jack@email.com"
+      "email": "jack@email.com",
+      "lastLogin": "2014-01-20T08:44:11Z"
     },
     {
       "name": "Mike",
-      "email": "mike@email.com"
+      "email": "mike@email.com",
+      "lastLogin": "2015-01-20T12:12:56Z"
     },
     {
       "name": "Bob",
-      "email": "bob@email.com"
+      "email": "bob@email.com",
+      "lastLogin": "2014-07-20T11:32:46Z"
     },
     {
       "name": "Allie",
-      "email": "allie@email.com"
+      "email": "allie@email.com",
+      "lastLogin": "2014-05-20T15:12:00Z"
     }
   ]
 }
