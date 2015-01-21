@@ -42,5 +42,24 @@
 </div>
 
 <modal id="user">
+    <h5>Formatted user</h5>
+    <table class="table table-striped table-bordered">
+        <tbody>
+        <tr>
+            <th>Name</th>
+            <td>{{vm.user.name}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{vm.user.email}}</td>
+        </tr>
+        <tr>
+            <th>Last Login</th>
+            <td>{{vm.user.lastLogin}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h5>Raw user</h5>
     <pre>{{vm.user | json}}</pre>
 </modal>
