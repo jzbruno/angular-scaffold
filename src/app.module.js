@@ -14,6 +14,8 @@
     ];
 
     function init($rootScope) {
+        $rootScope.loading = 0;
+
         $rootScope.$on('$routeChangeSuccess', function (event, current) {
             $rootScope.title = current.$$route.title;
         });
