@@ -6,3 +6,10 @@
 .progress-bar {
     width: 100%;
 }
+
+.btn-sort {
+    cursor: pointer;
+}
+.btn-selected {
+    color: #428bca;
+}
