@@ -14,7 +14,9 @@ module.exports = function (grunt) {
                     'src/app.module.js',
                     'src/app.config.js',
                     'src/app.routes.js',
-                    'src/**/*.js'
+                    'src/common/*.js',
+                    'src/**/*.js',
+                    '!src/vendor/*'
                 ],
                 dest: 'dist/app.js'
             }
@@ -27,7 +29,10 @@ module.exports = function (grunt) {
             views: {
                 expand: true,
                 flatten: true,
-                src: ['src/**/*.html'],
+                src: [
+                    'src/**/*.html',
+                    '!src/index.html'
+                ],
                 dest: 'dist/views/'
             },
             styles: {
@@ -53,6 +58,18 @@ module.exports = function (grunt) {
                 dest: 'dist/'
             }
         },
+        uglify: {
+            options: {
+                mangle: false,
+                sourceMap: true,
+                sourceMapName: 'dist/app.map'
+            },
+            app: {
+                files: {
+                    'dist/app.js': ['dist/app.js']
+                }
+            }
+        },
         watch: {
             build: {
                 files: 'src/**/*',
@@ -64,7 +81,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('build', ['jshint', 'concat', 'copy']);
+    grunt.registerTask('build', ['jshint', 'concat', 'copy', 'uglify']);
 };
