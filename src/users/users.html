@@ -38,7 +38,7 @@
                    data-ng-click="vm.selectUser(user)">{{user.name}}</a>
             </td>
             <td>{{user.email}}</td>
-            <td>{{user.lastLogin | ago}}</td>
+            <td title="{{user.lastLogin}}">{{user.lastLogin | ago}}</td>
         </tr>
         </tbody>
     </table>
@@ -67,7 +67,7 @@
         </tr>
         <tr>
             <th>Last Login</th>
-            <td>{{vm.user.lastLogin}}</td>
+            <td title="{{vm.user.lastLogin}}">{{vm.user.lastLogin | ago}}</td>
         </tr>
         </tbody>
     </table>
