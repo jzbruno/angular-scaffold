@@ -6,8 +6,15 @@ module.exports = function (grunt) {
                 'gruntFile.js',
                 'src/**/*.js'
             ]
+        },
+        watch: {
+            jshint: {
+                files: 'src/**/*.js',
+                tasks: 'jshint'
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };
