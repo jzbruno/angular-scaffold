@@ -13,6 +13,7 @@
                    placeholder="Enter a filter value."
                    data-ng-model="filterValue">
             <button class="btn btn-default"
+                    data-ng-disabled="!filterValue"
                     data-ng-click="addFilter()">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
