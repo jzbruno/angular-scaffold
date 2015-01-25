@@ -7,10 +7,11 @@
 
     dataService.$inject = [
         '$rootScope',
-        '$http'
+        '$http',
+        'config'
     ];
 
-    function dataService($rootScope, $http) {
+    function dataService($rootScope, $http, config) {
         return {
             get: get
         };
@@ -19,7 +20,7 @@
             $rootScope.loading += 1;
 
             return $http
-                .get('/data/' + collection + '.json')
+                .get(config.API_URL + '/' + collection + '.json')
                 .then(function (response) {
                     return response.data[collection];
                 })
