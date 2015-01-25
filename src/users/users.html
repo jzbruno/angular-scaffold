@@ -4,10 +4,10 @@
 
 <div class="panel panel-default">
     <div class="panel-body">
-        <input class="form-control"
-               type="text" placeholder="Quick search"
-               data-ng-model="vm.keywords"
-               data-ng-model-options="{debounce: 500}">
+        <table-filter data-ng-init="vm.fields = ['name', 'email']"
+                      fields="vm.fields"
+                      filter="vm.filter"
+                      keywords="vm.keywords"></table-filter>
     </div>
 
     <table class="table table-striped table-bordered">
@@ -30,6 +30,7 @@
         <tbody>
         <tr data-ng-repeat="user in vm.filtered = (vm.users |
                             filter: vm.keywords |
+                            filter: vm.filter |
                             orderBy: vm.sort.by : vm.sort.reverse)">
             <td>
                 <a class="btn-link" href

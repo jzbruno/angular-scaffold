@@ -1,0 +1,41 @@
+<div id="filter">
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="control-label" for="filter-fields">Filter</label>&nbsp;
+            <select class="form-control"
+                    id="filter-fields"
+                    data-ng-init="filterName = 'name'"
+                    data-ng-model="filterName"
+                    data-ng-options="field for field in fields">
+            </select>
+            <input class="form-control"
+                   type="text"
+                   placeholder="Enter a filter value."
+                   data-ng-model="filterValue">
+            <button class="btn btn-default"
+                    data-ng-click="addFilter()">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        </div>
+
+        <div class="form-group pull-right">
+            <input class="form-control"
+                   type="text" placeholder="Quick search"
+                   data-ng-model="keywords"
+                   data-ng-model-options="{debounce: 500}">
+        </div>
+    </form>
+
+    <div class="filters" data-ng-if="filter">
+        <div class="btn-group"
+             data-ng-repeat="(filterName, filterValue) in filter">
+                <span class="btn btn-sm btn-primary disabled">
+                  {{filterName}} = {{filterValue}}
+                </span>
+            <a class="btn btn-sm btn-primary"
+               data-ng-click="removeFilter(filterName)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </div>
+    </div>
+</div>
