@@ -18,7 +18,12 @@
         };
 
         function link(scope) {
-            scope.sort || (scope.sort = {by: 'name', reverse: false});
+            if (!scope.sort) {
+                scope.sort = {
+                    by: 'name',
+                    reverse: false
+                };
+            }
             scope.toggleSort = toggleSort;
 
             function toggleSort(name) {

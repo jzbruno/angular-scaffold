@@ -23,7 +23,9 @@
             scope.removeFilter = removeFilter;
 
             function addFilter() {
-                scope.filter || (scope.filter = {});
+                if (!scope.filter) {
+                    scope.filter = {};
+                }
                 scope.filter[scope.filterName] = scope.filterValue;
             }
 
