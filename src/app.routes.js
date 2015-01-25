@@ -13,13 +13,13 @@
         $routeProvider
             .when('/users', {
                 title: 'Users',
-                templateUrl: 'users/users.html',
+                templateUrl: 'views/users.html',
                 controller: 'UsersController',
                 controllerAs: 'vm'
             })
             .when('/errors/notfound', {
                 title: 'Not Found',
-                templateUrl: 'errors/notfound.html'
+                templateUrl: 'views/notfound.html'
             })
             .otherwise({redirectTo: '/errors/notfound'});
     }

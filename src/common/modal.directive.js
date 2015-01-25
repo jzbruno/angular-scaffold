@@ -8,7 +8,7 @@
     function modal() {
         return {
             restrict: 'E',
-            templateUrl: 'common/modal.html',
+            templateUrl: 'views/modal.html',
             replace: true,
             transclude: true
         };

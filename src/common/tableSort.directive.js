@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'common/tableSort.html',
+            templateUrl: 'views/tableSort.html',
             scope: {
                 name: '@',
                 sort: '='

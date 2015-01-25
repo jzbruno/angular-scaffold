@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'common/tableFilter.html',
+            templateUrl: 'views/tableFilter.html',
             scope: {
                 fields: '=',
                 filter: '=',
