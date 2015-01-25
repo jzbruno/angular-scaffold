@@ -4,8 +4,7 @@ module.exports = function (grunt) {
         jshint: {
             all: [
                 'gruntFile.js',
-                'src/**/*.js',
-                '!src/vendor/*'
+                'src/**/*.js'
             ]
         },
         concat: {
@@ -15,8 +14,7 @@ module.exports = function (grunt) {
                     'src/app.config.js',
                     'src/app.routes.js',
                     'src/common/*.js',
-                    'src/**/*.js',
-                    '!src/vendor/*'
+                    'src/**/*.js'
                 ],
                 dest: 'dist/app.js'
             }
@@ -40,18 +38,6 @@ module.exports = function (grunt) {
                 flatten: true,
                 src: ['src/styles/*.css'],
                 dest: 'dist/styles/'
-            },
-            fonts: {
-                expand: true,
-                flatten: true,
-                src: ['src/fonts/*'],
-                dest: 'dist/fonts/'
-            },
-            vendor: {
-                expand: true,
-                flatten: true,
-                src: ['src/vendor/*'],
-                dest: 'dist/vendor/'
             },
             data: {
                 src: ['data/*.json'],
