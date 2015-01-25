@@ -17,6 +17,10 @@
                 controller: 'UsersController',
                 controllerAs: 'vm'
             })
-            .otherwise({redirectTo: '/users'});
+            .when('/errors/notfound', {
+                title: 'Not Found',
+                templateUrl: 'errors/notfound.html'
+            })
+            .otherwise({redirectTo: '/errors/notfound'});
     }
 })();
