@@ -1,0 +1,11 @@
+{
+  "name": "angular-scaffold",
+  "version": "0.0.1",
+  "description": "AngularJS app scaffold with examples for common app features.",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "scripts": {
+    "lint": "jshint src/"
+  }
+}
